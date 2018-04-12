@@ -8,6 +8,7 @@ import org.springframework.cloud.stream.messaging.Source;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.messaging.support.MessageBuilder;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,6 +28,7 @@ public class FraudDetectionController {
         return new Response("FRAUD", "Amount too high");
     }
 
+    @PostMapping(path = "/message")
     public void message() {
         this.source.output().send(MessageBuilder
         .withPayload(
