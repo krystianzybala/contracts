@@ -1,7 +1,7 @@
 org.springframework.cloud.contract.spec.Contract.make {
     request {
         method 'PUT'
-        url '/0'
+        url '/fraudcheck'
         body("""
     {
       "clientId":"1234567890",
